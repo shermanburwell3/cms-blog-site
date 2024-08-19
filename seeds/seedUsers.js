@@ -8,7 +8,9 @@ const userData = [
     }
 ];
 
-const seedData = async () => {
+const seedUser = async () => {
     await User.bulkCreate(userData);
     console.log('User data seeded successfully!');
 };
+
+module.exports = seedUser;
