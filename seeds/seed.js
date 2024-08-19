@@ -1,5 +1,14 @@
 const { User, BlogPost } = require('../models');
 
+const userData = [
+    {
+        id: '1',
+        username: 'testuser',
+        email: 'testuser@email.com',
+        password: 'test123',
+    }
+]
+
 const blogPostData = [
   {
     title: 'First Blog Post',
@@ -18,6 +27,7 @@ const blogPostData = [
   }
 ];
 
+const seedUser = () => User.bulkCreate(userData);
 const seedBlogPosts = () => BlogPost.bulkCreate(blogPostData);
 
-module.exports = seedBlogPosts;
+module.exports = seedUser, seedBlogPosts;
