@@ -1,13 +1,6 @@
-const { User, BlogPost } = require('../models');
+const { BlogPost } = require('../models');
 
-const userData = [
-    {
-        id: '1',
-        username: 'testuser',
-        email: 'testuser@email.com',
-        password: 'test123',
-    }
-];
+
 
 const blogPostData = [
   {
@@ -27,12 +20,8 @@ const blogPostData = [
   }
 ];
 
-const seedUser = async () => {
-    await User.bulkCreate(userData);
-};
-
 const seedBlogPosts = async () => {
     await BlogPost.bulkCreate(blogPostData);
 };
 
-module.exports = { seedUser, seedBlogPosts };
+module.exports = seedBlogPosts;

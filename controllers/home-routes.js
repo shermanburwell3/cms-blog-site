@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
       }
     });
 
-    res.render('homepage', { blogPosts });
+    res.render('./partials/homepage', { blogPosts });
   } catch (error) {
     res.status(500).json({ error: 'Internal server error' });
   }
