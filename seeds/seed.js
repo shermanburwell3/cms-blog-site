@@ -7,7 +7,7 @@ const userData = [
         email: 'testuser@email.com',
         password: 'test123',
     }
-]
+];
 
 const blogPostData = [
   {
@@ -27,7 +27,12 @@ const blogPostData = [
   }
 ];
 
-const seedUser = () => User.bulkCreate(userData);
-const seedBlogPosts = () => BlogPost.bulkCreate(blogPostData);
+const seedUser = async () => {
+    await User.bulkCreate(userData);
+};
 
-module.exports = seedUser, seedBlogPosts;
+const seedBlogPosts = async () => {
+    await BlogPost.bulkCreate(blogPostData);
+};
+
+module.exports = { seedUser, seedBlogPosts };
