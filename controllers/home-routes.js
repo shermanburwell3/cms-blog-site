@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
       }
     });
 
-    res.render('homepage', { blogPosts });
+    res.render('homepage', { loggedIn: req.session.loggedIn });
   } catch (error) {
     res.status(500).json({ error: 'Internal server error' });
   }
@@ -23,10 +23,8 @@ router.get('/', async (req, res) => {
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
       res.redirect('/');
-      console.log(req.session.loggedIn);
       return;
     }
-    console.log(req.session.loggedIn)
     res.render('login');
   });
   
